@@ -21,7 +21,7 @@ y_coor=scr_half_height-win_half_height
 
 window.geometry('x'.join(win_size)+f"+{x_coor}+{y_coor}")
 
-window.resizable(False,False)
+window.resizable(True,True)
 
 image=Image.open("D:\桌面\Pictures\微信图片_20260126212102_182_276.jpg")
 icon=ImageTk.PhotoImage(image)
@@ -29,10 +29,27 @@ window.iconphoto(True,icon)
 
 def close_window():
     print("关闭窗口")
+    window.destroy()
 
-window.configure(bg='purple')
+window.configure(bg='white')
 window.attributes('-alpha',1)
 window.attributes('-topmost',True)
 window.protocol('WM_DELETE_WINDOW',close_window)
+
+label1=tk.Label(window,
+               text="new label",
+               font=('consolas',40),
+               fg='white',
+               bg='grey')
+# label.pack()
+# label.place(x=3,y=3)
+label1.grid(row=1,column=1)
+
+label2=tk.Label(window,
+               text="new label",
+               font=('consolas',40),
+               fg='black',
+               bg='grey')
+label2.grid(row=2,column=1)
 
 window.mainloop()
