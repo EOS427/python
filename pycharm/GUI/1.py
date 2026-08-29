@@ -27,4 +27,12 @@ image=Image.open("D:\桌面\Pictures\微信图片_20260126212102_182_276.jpg")
 icon=ImageTk.PhotoImage(image)
 window.iconphoto(True,icon)
 
+def close_window():
+    print("关闭窗口")
+
+window.configure(bg='purple')
+window.attributes('-alpha',1)
+window.attributes('-topmost',True)
+window.protocol('WM_DELETE_WINDOW',close_window)
+
 window.mainloop()
