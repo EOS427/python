@@ -1,4 +1,5 @@
 import tkinter as tk
+from PIL import Image,ImageTk
 
 window=tk.Tk()
 window.title("new window")
@@ -20,5 +21,10 @@ y_coor=scr_half_height-win_half_height
 
 window.geometry('x'.join(win_size)+f"+{x_coor}+{y_coor}")
 
-window.geometry()
+window.resizable(False,False)
+
+image=Image.open("D:\桌面\Pictures\微信图片_20260126212102_182_276.jpg")
+icon=ImageTk.PhotoImage(image)
+window.iconphoto(True,icon)
+
 window.mainloop()
