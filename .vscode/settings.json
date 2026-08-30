@@ -1,3 +1,4 @@
 {
-    "python.defaultInterpreterPath": "D:\\pyproj\\pycharm\\.venv\\Scripts\\python.exe"
+    "python.defaultInterpreterPath": "D:\\miniconda_x86_64bit\\envs\\thellmbook\\python.exe",
+    "python.analysis.typeCheckingMode": "off"
 }
