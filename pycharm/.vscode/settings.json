@@ -1,5 +1,8 @@
 {
-    // 本项目使用 .venv（Python 3.14，含 numpy 等依赖）
-    "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
-    "python.REPL.enableREPLSmartSend": false
+    "python.defaultInterpreterPath": "D:\\miniconda_x86_64bit\\envs\\thellmbook\\python.exe",
+    "python.REPL.enableREPLSmartSend": false,
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.extraPaths": [
+    "${workspaceFolder}/深度学习实践/deep-learning-from-scratch-master/deep-learning-from-scratch-master"
+]
 }

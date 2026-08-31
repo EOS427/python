@@ -1,4 +1,8 @@
 {
     "python.defaultInterpreterPath": "D:\\miniconda_x86_64bit\\envs\\thellmbook\\python.exe",
-    "python.analysis.typeCheckingMode": "off"
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/pycharm/深度学习实践/deep-learning-from-scratch-master/deep-learning-from-scratch-master"
+    ]
+
 }
