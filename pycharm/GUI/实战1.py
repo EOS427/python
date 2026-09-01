@@ -3,7 +3,6 @@ import tkinter as tk
 from tkinter import messagebox
 
 user_name_map={}
-email_map={}
 
 window=tk.Tk()
 window.title("登录/注册界面")
@@ -28,18 +27,21 @@ entry_2=tk.Entry(window,textvariable=str_2,width=15,font=("consolas",26),)
 entry_2.place(x=150,y=180)
 
 def log_in():
-    print(str_1.get()," ",str_2.get())
-    if not str_1.get() or not str_2.get():
+    # print(str_1.get()," ",str_2.get())
+    input_user_name=str_1.get()
+    input_password=str_2.get()
+    if not input_user_name or not input_password:
         messagebox.showinfo("错误","信息未填写")
-    elif user_name_map[str_1]!=str_2:
+    elif user_name_map[input_user_name]!=input_password:
         choice=messagebox.askokcancel("错误","填写信息错误，请再次尝试")
         if not choice:
             window.destroy()
     else:
+        messagebox.showinfo("成功","登录成功")
         window.destroy()
 
 def register_in():
-    new_window = tk.Toplevel()
+    new_window = tk.Toplevel(window)
     new_window.title("注册页面")
     new_window.geometry("400x400+100+100")
     new_window.resizable(False, False)
@@ -67,15 +69,19 @@ def register_in():
         password=password_str.get()
         confirm_psw=confirm_psw_str.get()
         if not user_name or not password or not confirm_psw:
-            messagebox.showwarning("错误","信息缺失")
+            messagebox.showwarning("错误","信息缺失",parent=new_window)
+            # new_window.attributes('-topmost',True)
         elif password!=confirm_psw:
-            messagebox.showwarning("错误","前后密码不一致")
+            messagebox.showwarning("错误","前后密码不一致",parent=new_window)
+            # new_window.attributes('-topmost',True)
         elif user_name in user_name_map:
-            messagebox.showwarning("错误","用户名重复")
+            messagebox.showwarning("错误","用户名重复",parent=new_window)
+            # new_window.attributes('-topmost',True)
         else:
             user_name_map[user_name]=password
-            choice=messagebox.showinfo("注册成功")
+            choice=messagebox.showinfo("注册成功","账号注册成功，将返回登陆界面")
             new_window.destroy()
+
 
     register_in_button=tk.Button(new_window,text="注册",width=10,font=("consolas", 26),command=input_information)
     register_in_button.place(x=100,y=250)
