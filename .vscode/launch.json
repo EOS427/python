@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: rebuild",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/pycharm/深度学习实践/复现mnist/rebuild.py",
+            "cwd": "${workspaceFolder}/pycharm/深度学习实践/复现mnist",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/pycharm/深度学习实践/deep-learning-from-scratch-master/deep-learning-from-scratch-master"
+            }
+        }
+    ]
+}
