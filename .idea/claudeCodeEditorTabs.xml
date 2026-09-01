@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ClaudeCodeEditorTabs">
+    <option name="activeSessionId" value="98fabcbc-a5bb-41f6-bc14-9165a4f3e814" />
+    <option name="openSessionIds">
+      <list>
+        <option value="98fabcbc-a5bb-41f6-bc14-9165a4f3e814" />
+      </list>
+    </option>
+    <option name="sessionPaths">
+      <map>
+        <entry key="98fabcbc-a5bb-41f6-bc14-9165a4f3e814" value="/sessions/0c705477-55cd-4301-a103-120e4a092b6a" />
+      </map>
+    </option>
+    <option name="sessionTitles">
+      <map>
+        <entry key="98fabcbc-a5bb-41f6-bc14-9165a4f3e814" value="为什么程序在注册窗口不输入任何数据直接点击注册按钮会直接退出注册窗口，请解释原因并指导解决" />
+      </map>
+    </option>
+  </component>
+</project>
