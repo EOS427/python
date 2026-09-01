@@ -31,7 +31,7 @@ def log_in():
     print(str_1.get()," ",str_2.get())
     if not str_1.get() or not str_2.get():
         messagebox.showinfo("错误","信息未填写")
-    elif str_1.get()!="123" or str_2.get()!="123":
+    elif user_name_map[str_1]!=str_2:
         choice=messagebox.askokcancel("错误","填写信息错误，请再次尝试")
         if not choice:
             window.destroy()
@@ -45,14 +45,11 @@ def register_in():
     new_window.resizable(False, False)
 
     user_name_str=tk.StringVar()
-    email_str=tk.StringVar()
     password_str=tk.StringVar()
     confirm_psw_str=tk.StringVar()
 
     user_name_label=tk.Label(new_window,text="账号名:",font=("consolas",20))
     user_name_label.grid(row=1,column=1)
-    email_label=tk.Label(new_window,text="邮箱:",font=("consolas",20))
-    email_label.grid(row=2,column=1)
     password_label=tk.Label(new_window,text="密码:",font=("consolas",20))
     password_label.grid(row=3,column=1)
     confirm_psw_label=tk.Label(new_window,text="确认密码:",font=("consolas",20))
@@ -60,8 +57,6 @@ def register_in():
 
     user_name_entry=tk.Entry(new_window,textvariable=user_name_str,width=12,font=("consolas",26),)
     user_name_entry.grid(row=1,column=2)
-    email_entry = tk.Entry(new_window,textvariable=email_str,width=12, font=("consolas", 26), )
-    email_entry.grid(row=2, column=2)
     password_entry = tk.Entry(new_window,textvariable=password_str, width=12, font=("consolas", 26), )
     password_entry.grid(row=3, column=2)
     confirm_psw_entry = tk.Entry(new_window,textvariable=confirm_psw_str, width=12, font=("consolas", 26), )
@@ -69,21 +64,18 @@ def register_in():
 
     def input_information():
         user_name=user_name_str.get()
-        email=email_str.get()
         password=password_str.get()
         confirm_psw=confirm_psw_str.get()
-        if not user_name or not email or not password or not confirm_psw:
+        if not user_name or not password or not confirm_psw:
             messagebox.showwarning("错误","信息缺失")
         elif password!=confirm_psw:
             messagebox.showwarning("错误","前后密码不一致")
-        elif user_name_map[user_name]==1:
+        elif user_name in user_name_map:
             messagebox.showwarning("错误","用户名重复")
-        elif email_map[email]==1:
-            messagebox.showwarning("错误","该邮箱已注册")
         else:
-            user_name_map[user_name]=1
-            email_map[email]=1
+            user_name_map[user_name]=password
             choice=messagebox.showinfo("注册成功")
+            new_window.destroy()
 
     register_in_button=tk.Button(new_window,text="注册",width=10,font=("consolas", 26),command=input_information)
     register_in_button.place(x=100,y=250)

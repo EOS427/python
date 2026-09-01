@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/pycharm/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/pycharm/test/.venv" />
     </content>
-    <orderEntry type="jdk" jdkName="D:\桌面\Project\python testing prograhm\.venv" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.14 (pycharm)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyDocumentationSettings">
